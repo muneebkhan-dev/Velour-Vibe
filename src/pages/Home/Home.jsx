@@ -1,10 +1,10 @@
-import React from 'react'
-import Navbar from '../../Components/Navbar'
+import React from "react"
+import Navbar from "../../Components/Header/Navbar"
 
 const Home = () => {
   return (
     <>
-    <div>home</div>
+      <div>home</div>
     </>
   )
 }
