@@ -7,10 +7,10 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   return (
-    <nav className="relative bg-amber-300">
-      <div className="max-w-7xl px-3 py-7 mx-auto flex justify-center items-center gap-10">
+    <nav className="relative">
+      <div className="max-w-7xl px-3 py-6 mx-auto flex justify-center items-center gap-10">
         <div>
-          <Link to='/'><h1 className="font-dm font-extrabold text-2xl">VELOUR.CO</h1></Link>
+          <Link to='/'><h1 className="font-dm font-extrabold text-3xl tracking-tight">VELOUR.CO</h1></Link>
         </div>
         <ul className='font-dm flex gap-5'>
           <Link to='/shop'>Shop</Link>
