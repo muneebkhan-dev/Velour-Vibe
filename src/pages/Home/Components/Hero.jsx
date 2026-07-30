@@ -2,8 +2,8 @@ import React from "react"
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center bg-[#F2F0F1]">
-      <div className="max-w-7xl px-10 mx-auto bg-[url('/src/assets/images/hero.png')] w-full h-[85vh] bg-center bg-no-repeat min-h-screen flex flex-col justify-center gap-10">
+    <section className="relative w-full bg-[url('/src/assets/images/hero.png')] min-h-screen bg-cover bg-center bg-no-repeat w-full flex flex-col items-center justify-center">
+      <div className="max-w-7xl px-10 mx-auto flex flex-col justify-center gap-10">
         <div className="w-1/2 flex flex-col gap-6">
           <h1 className='font-dm text-6xl font-extrabold tracking-tighter'>
             FIND CLOTHES THAT MATCHES YOUR STYLE
