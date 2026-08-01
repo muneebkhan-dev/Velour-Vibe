@@ -6,7 +6,7 @@ const NewArrivalsSection = () => {
   const NewArrivalsSecProduct = [
     {
       id: 1,
-      img: <img src="/src/assets/images/CardImages/Frame 32.png" alt="" />,
+      img: <img src="/src/assets/images/CardImages/proimg-1.png" alt="" />,
       title: "T-shirt with Tape Details",
       rating: 4.5,
       price: "$120",
@@ -16,7 +16,7 @@ const NewArrivalsSection = () => {
 
     {
       id: 2,
-      img: <img src="/src/assets/images/CardImages/Frame 33.png" alt="" />,
+      img: <img src="/src/assets/images/CardImages/proimg-2.png" alt="" />,
       title: "Skinny Fit Jeans",
       rating: 4.5,
       price: "$240",
@@ -27,7 +27,7 @@ const NewArrivalsSection = () => {
 
     {
       id: 3,
-      img: <img src="/src/assets/images/CardImages/Frame 34.png" alt="" />,
+      img: <img src="/src/assets/images/CardImages/proimg-3.png" alt="" />,
       title: "Checkered Shirt",
       rating: 4.5,
       price: "$180",
@@ -37,7 +37,7 @@ const NewArrivalsSection = () => {
     
     {
       id: 4,
-      img: <img src="/src/assets/images/CardImages/Frame 38.png" alt="" />,
+      img: <img src="/src/assets/images/CardImages/proimg-4.png" alt="" />,
       title: "Sleeve Striped T-shirt",
       rating: 4.5,
       price: "$130",
@@ -49,9 +49,9 @@ const NewArrivalsSection = () => {
 
   return (
     <section className="relative flex justify-center">
-      <div className="max-w-7xl border-b border-gray-300">
+      <div className="max-w-7xl border-b border-gray-300 py-20">
         <div>
-          <h1 className='font-dm text-5xl font-extrabold pt-20 pb-15 flex justify-center'>
+          <h1 className='font-dm text-5xl font-extrabold pb-15 flex justify-center'>
             NEW ARRIVALS
           </h1>
         </div>
@@ -60,7 +60,7 @@ const NewArrivalsSection = () => {
           <ProductCard product={product} key={product.id} />
          ))}
         </div>
-        <div className="flex justify-center py-10">
+        <div className="flex justify-center pt-10">
           <button className="font-dm text-base py-3 px-18 border border-[#000000]/10 rounded-3xl">
              View All
           </button>
