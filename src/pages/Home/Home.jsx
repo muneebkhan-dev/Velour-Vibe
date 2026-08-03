@@ -4,6 +4,7 @@ import Hero from "./Components/Hero"
 import BrandBar from "./Components/BrandBar"
 import NewArrivalsSection from "./Components/NewArrivalsSection"
 import TopSellingSection from "./Components/TopSellingSection"
+import CategoryGrid from "./Components/CategoryGrid"
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <BrandBar/>
       <NewArrivalsSection/>
       <TopSellingSection/>
+    <CategoryGrid/>
     </>
   )
 }

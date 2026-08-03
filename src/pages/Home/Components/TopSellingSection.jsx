@@ -48,7 +48,7 @@ const TopSellingSection = () => {
 
   return (
     <section className="relative flex justify-center">
-      <div className="max-w-7xl border-b border-gray-300">
+      <div className="max-w-7xl">
         <div>
           <h1 className='font-dm text-5xl font-extrabold pt-20 pb-15 flex justify-center'>
             Top Selling
