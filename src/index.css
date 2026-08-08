@@ -6,3 +6,13 @@
   --font-dm: "DM Sans", sans-serif;
   --font-poppins: "Poppins", sans-serif;
 }
+
+@media (min-width: 1023px) and (max-width: 1150px) {
+    .nav-content ul {
+      gap: 16px;
+    }
+
+    .nav-icons {
+      gap: 10px;
+    }
+}

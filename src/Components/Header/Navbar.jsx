@@ -8,21 +8,22 @@ import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
   return (
     <nav className="relative">
-      <div className="max-w-7xl px-3 py-6 mx-auto flex justify-center items-center gap-10">
+      <div className="nav-content max-w-7xl px-10 py-6 mx-auto flex justify-between items-center ">
         <div>
           <Link to='/'><h1 className="font-dm font-extrabold text-3xl tracking-tight">VELOUR.CO</h1></Link>
         </div>
-        <ul className='font-dm flex gap-5'>
-          <Link to='/shop'>Shop</Link>
-          <Link to='/onsale'>On Sale</Link>
-          <Link to='/newarrivals'>New Arrivals</Link>
-          <Link to='/brands'>Brands</Link>
+        <ul className='font-dm flex gap-6'>
+          <Link className="font-dm text-base" to='/shop'>Shop</Link>
+          <Link className="font-dm text-base" to='/onsale'>On Sale</Link>
+          <Link className="font-dm text-base" to='/newarrivals'>New Arrivals</Link>
+          <Link className="font-dm text-base" to='/brands'>Brands</Link>
         </ul>
-        <div className="bg-[#F0F0F0] text-[#000000]/40 px-3 py-2 rounded-2xl w-2/5 flex items-center">
-          <IoSearch className="size-6" />
-          <p className="font-dm px-2 text-sm">Search for products...</p>
+        <div className="bg-[#F0F0F0] text-gray-600 px-4 py-2 rounded-3xl w-2/5 flex items-center">
+          <IoSearch className="size-5" />
+          <input type="text" className="font-dm px-2 placeholder:text-sm outline-hidden" placeholder="Search for products..."/>
+          
         </div>
-        <div className="flex gap-4">
+        <div className="nav-icons flex gap-4">
           <FiShoppingCart className="size-6"/>
           <CgProfile className="size-6"/>
         </div>
