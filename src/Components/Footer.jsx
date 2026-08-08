@@ -8,22 +8,23 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <section className='relative bg-[#F0F0F0] flex flex-col items-center'>
+    <section className='relative bg-[#F0F0F0] flex flex-col items-center mt-15'>
       <div className="px-15 max-w-7xl">
-        <div className='w-full bg-black rounded-3xl p-10 flex justify-between items-center'>
+        <div className='w-full bg-black rounded-3xl py-10 px-12 flex justify-between items-center -mt-20'>
           <div className='w-1/2'>
             <h1 className='font-dm text-4xl text-white font-extrabold'>
               STAY UPTO DATE ABOUT OUR LATEST OFFERS
             </h1>
           </div>
-          <div>
-          <div className="relative bg-white px-20 py-3 rounded-4xl">
+          <div className="flex flex-col gap-3">
+          <div className="relative bg-white px-20 py-2 rounded-4xl">
           <input type="email" placeholder="Enter your email address" className="w-full outline-none placeholder:font-dm placeholder:text-base" />
           <MdOutlineMailOutline className="absolute size-7 left-4 top-1/2 -translate-y-1/2 text-gray-500" />
           </div>
+          <button className="font-dm text-base bg-white text-black px-20 py-2 rounded-4xl">Subscribe to Newsletter</button>
           </div>
         </div>
-        <div className='py-10 mx-auto'>
+        <div className='pb-10 mx-auto'>
           <div className='flex justify-between gap-5 items-center py-10 border-b border-gray-300'>
             <div className='w-1/4 flex flex-col gap-8'>
               <Link to='/'>
