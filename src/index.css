@@ -15,4 +15,28 @@
     .nav-icons {
       gap: 10px;
     }
+
+    .decorator-img1 {
+      right: 2%;
+    }
+
+    .hero__social-proof span {
+      font-size: 44px;
+    }
+
+    .hero__social-proof p{
+      font-size: 14px;
+    }
+
+    .inter-brands {
+      padding: 0px 20px 0px 0px;
+    }
+
+    .high-quality-product {
+      padding: 0px 20px;
+    }
+
+    .happy-cust {
+      padding: 0px 20px;
+    }
 }
