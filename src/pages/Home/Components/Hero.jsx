@@ -7,7 +7,7 @@ const Hero = () => {
         <div className='w-auto md:w-1/2 lg:w-auto flex justify-center items-center px-5 md:px-0'>
           <div className='hero__content flex flex-col gap-7 md:gap-5 lg:gap-10 items-center md:items-start lg:items-start'>
             <div className='hero__info lg:w-1/2 flex flex-col gap-4 md:gap-4 lg:gap-6 text-start pt-10 md:pt-0'>
-              <h1 className='font-dm text-4xl md:text-3xl lg:text-6xl  font-[900] md:font-extrabold tracking-tighter'>
+              <h1 className='font-dm text-4xl md:text-3xl lg:text-6xl  font-black md:font-extrabold tracking-tighter'>
                 FIND CLOTHES THAT MATCHES YOUR STYLE
               </h1>
               <p className='w-auto md:w-2/3 lg:w-auto font-dm text-[#000000]/60 text-base md:text-sm lg:text-base'>
