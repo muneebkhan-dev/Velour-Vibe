@@ -9,6 +9,7 @@ import { MdDiscount } from "react-icons/md"
 import { IoSparkles } from "react-icons/io5"
 import { IoStorefront } from "react-icons/io5"
 import { IoChevronForwardOutline } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -52,6 +53,9 @@ const Navbar = () => {
           <div className="flex gap-7">
             <ul className='flex flex-col gap-10'>
               <li>
+                <FaHome className='size-7' />
+              </li>
+              <li>
                 <FaCartShopping className='size-7' />
               </li>
               <li>
@@ -65,6 +69,10 @@ const Navbar = () => {
               </li>
             </ul>
             <ul className='flex flex-col gap-10 w-full'>
+              <Link className='flex items-center justify-between font-dm text-lg' to='/'>
+                Home
+                <IoChevronForwardOutline />
+              </Link>
               <Link className='flex items-center justify-between font-dm text-lg' to='/shop'>
                 Shop
                 <IoChevronForwardOutline />

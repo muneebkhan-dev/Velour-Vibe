@@ -7,6 +7,15 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @media (min-width: 1023px) and (max-width: 1150px) {
     .nav-content ul {
       gap: 16px;
@@ -38,5 +47,35 @@
 
     .happy-cust {
       padding: 0px 20px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1024px) {
+  .hero-cont {
+    padding: 0px 40px;
+  }
+
+  .hero__content {
+    gap: 40px;
+  }
+
+  .hero__info {
+    gap: 24px;
+  }
+
+  .hero__info p {
+    width: 80%;
+  }
+
+  .high-quality-product {
+    padding: 0px 14px;
+  }
+
+  .happy-cust {
+    padding: 0px 14px;
+  }
+
+  .inter-brands {
+      padding: 0px 14px 0px 0px;
     }
 }
