@@ -6,8 +6,8 @@ const NewArrivalsSection = () => {
   const NewArrivalsSecProduct = [
     {
       id: 1,
-      img: <img src="/src/assets/images/CardImages/proimg-1.png" alt="" />,
-      title: "T-shirt with Tape Details",
+      img: "/src/assets/images/CardImages/proimg-1.png",
+      title: "T-shirt with Tape",
       rating: 4.5,
       price: "$120",
       
@@ -16,7 +16,7 @@ const NewArrivalsSection = () => {
 
     {
       id: 2,
-      img: <img src="/src/assets/images/CardImages/proimg-2.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-2.png",
       title: "Skinny Fit Jeans",
       rating: 4.5,
       price: "$240",
@@ -27,7 +27,7 @@ const NewArrivalsSection = () => {
 
     {
       id: 3,
-      img: <img src="/src/assets/images/CardImages/proimg-3.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-3.png",
       title: "Checkered Shirt",
       rating: 4.5,
       price: "$180",
@@ -37,7 +37,7 @@ const NewArrivalsSection = () => {
     
     {
       id: 4,
-      img: <img src="/src/assets/images/CardImages/proimg-4.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-4.png",
       title: "Sleeve Striped T-shirt",
       rating: 4.5,
       price: "$130",
@@ -48,20 +48,20 @@ const NewArrivalsSection = () => {
   ]
 
   return (
-    <section className="relative flex justify-center">
-      <div className="max-w-7xl border-b border-gray-300 py-20">
+    <section className="newarrivals-sec relative flex justify-center">
+      <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 px-5">
         <div>
-          <h1 className='font-dm text-5xl font-extrabold pb-15 flex justify-center'>
+          <h1 className='font-dm text-2xl md:text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>
             NEW ARRIVALS
           </h1>
         </div>
-        <div className="flex  gap-4">
+        <div className="flex gap-4">
          { NewArrivalsSecProduct.map((product) => (
           <ProductCard product={product} key={product.id} />
          ))}
         </div>
         <div className="flex justify-center pt-10">
-          <button className="font-dm text-base py-3 px-18 border border-[#000000]/10 rounded-3xl">
+          <button className="font-dm md:text-sm lg:text-base py-3 px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
              View All
           </button>
         </div>
