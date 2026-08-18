@@ -7,7 +7,6 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
-
 html {
   overflow-x: hidden;
 }
@@ -17,37 +16,37 @@ body {
 }
 
 @media (min-width: 1023px) and (max-width: 1150px) {
-    .nav-content ul {
-      gap: 16px;
-    }
+  .nav-content ul {
+    gap: 16px;
+  }
 
-    .nav-icons {
-      gap: 10px;
-    }
+  .nav-icons {
+    gap: 10px;
+  }
 
-    .decorator-img1 {
-      right: 2%;
-    }
+  .decorator-img1 {
+    right: 2%;
+  }
 
-    .hero__social-proof span {
-      font-size: 44px;
-    }
+  .hero__social-proof span {
+    font-size: 44px;
+  }
 
-    .hero__social-proof p{
-      font-size: 14px;
-    }
+  .hero__social-proof p {
+    font-size: 14px;
+  }
 
-    .inter-brands {
-      padding: 0px 20px 0px 0px;
-    }
+  .inter-brands {
+    padding: 0px 20px 0px 0px;
+  }
 
-    .high-quality-product {
-      padding: 0px 20px;
-    }
+  .high-quality-product {
+    padding: 0px 20px;
+  }
 
-    .happy-cust {
-      padding: 0px 20px;
-    }
+  .happy-cust {
+    padding: 0px 20px;
+  }
 }
 
 @media (min-width: 900px) and (max-width: 1024px) {
@@ -76,10 +75,18 @@ body {
   }
 
   .inter-brands {
-      padding: 0px 14px 0px 0px;
-    }
+    padding: 0px 14px 0px 0px;
+  }
 
   .newarrivals-cont {
-      padding: 80px 40px;
-    }
+    padding: 80px 40px;
+  }
+
+  .topselling-cont {
+    padding: 80px 40px;
+  }
+
+  .topselling__info h1 {
+    padding: 0px 0px 40px 0px;
+  }
 }

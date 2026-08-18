@@ -6,7 +6,7 @@ const TopSellingSection = () => {
     const TopSellingSecProduct = [
     {
       id: 1,
-      img: <img src="/src/assets/images/CardImages/proimg-5.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-5.png",
       title: "Vertical Striped Shirt",
       rating: 4.5,
       price: "$212",
@@ -17,7 +17,7 @@ const TopSellingSection = () => {
 
     {
       id: 2,
-      img: <img src="/src/assets/images/CardImages/proimg-6.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-6.png",
       title: "Courage Graphic T-shirt",
       rating: 4.5,
       price: "$145",
@@ -27,7 +27,7 @@ const TopSellingSection = () => {
 
     {
       id: 3,
-      img: <img src="/src/assets/images/CardImages/proimg-7.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-7.png",
       title: "Loose Fit Bermuda Shorts",
       rating: 4.5,
       price: "$80",
@@ -37,7 +37,7 @@ const TopSellingSection = () => {
     
     {
       id: 4,
-      img: <img src="/src/assets/images/CardImages/proimg-8.png" alt="" />,
+      img: "/src/assets/images/CardImages/proimg-8.png",
       title: "Faded Skinny Jeans",
       rating: 4.5,
       price: "$210",
@@ -47,20 +47,20 @@ const TopSellingSection = () => {
   ]
 
   return (
-    <section className="relative flex justify-center">
-      <div className="max-w-7xl">
-        <div>
-          <h1 className='font-dm text-5xl font-extrabold pt-20 pb-15 flex justify-center'>
+    <section className="topselling-sec relative flex justify-center">
+      <div className="topselling-cont max-w-7xl px-5 lg:px-10 py-5 lg:py-0">
+        <div className='topselling__info'>
+          <h1 className='font-dm text-2xl md:text-3xl lg:text-5xl font-extrabold md:py-10 lg:py-0 lg:pt-20 lg:pb-15 flex justify-center'>
             Top Selling
           </h1>
         </div>
-        <div className="flex  gap-4">
+        <div className="flex gap-4">
          {TopSellingSecProduct.map((product) => (
           <ProductCard product={product} key={product.id} />
          ))}
         </div>
         <div className="flex justify-center py-10">
-          <button className="font-dm text-base py-3 px-18 border border-[#000000]/10 rounded-3xl">
+          <button className="font-dm text-sm lg:text-base py-3 px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
              View All
           </button>
         </div>
