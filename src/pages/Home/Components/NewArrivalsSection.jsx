@@ -49,19 +49,21 @@ const NewArrivalsSection = () => {
 
   return (
     <section className="newarrivals-sec relative flex justify-center">
-      <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 px-5 lg:px-10">
+      <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 px-3 md:px-5 lg:px-10">
         <div>
-          <h1 className='font-dm text-2xl md:text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>
+          <h1 className='font-dm text-3xl md:text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>
             NEW ARRIVALS
           </h1>
         </div>
-        <div className="flex gap-4">
-         { NewArrivalsSecProduct.map((product) => (
+        <div className="flex gap-4 justify-center">
+         { NewArrivalsSecProduct.map((product, index) => (
+          <div className={`product-card  ${index >= 2 ? 'hidden md:flex' : ''}`}>
           <ProductCard product={product} key={product.id} />
+          </div>
          ))}
         </div>
-        <div className="flex justify-center pt-10">
-          <button className="font-dm text-sm lg:text-base py-3 px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
+        <div className="flex justify-center pt-5 md:pt-10">
+          <button className="w-full md:w-auto font-dm text-sm lg:text-base py-3 md:py-3 md:px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
              View All
           </button>
         </div>
