@@ -48,10 +48,10 @@ const NewArrivalsSection = () => {
   ]
 
   return (
-    <section className="newarrivals-sec relative flex justify-center">
-      <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 px-3 md:px-5 lg:px-10">
+    <section className="newarrivals-sec relative flex justify-center px-3 lg:px-0">
+      <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 md:px-5 lg:px-10">
         <div>
-          <h1 className='font-dm text-3xl md:text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>
+          <h1 className='font-dm text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>
             NEW ARRIVALS
           </h1>
         </div>
@@ -63,7 +63,7 @@ const NewArrivalsSection = () => {
          ))}
         </div>
         <div className="flex justify-center pt-5 md:pt-10">
-          <button className="w-full md:w-auto font-dm text-sm lg:text-base py-3 md:py-3 md:px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
+          <button className="w-full md:w-auto font-dm text-sm lg:text-base py-3 md:px-15 lg:px-18 border border-[#000000]/10 rounded-3xl">
              View All
           </button>
         </div>
