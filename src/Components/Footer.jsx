@@ -4,27 +4,33 @@ import { FaTwitter } from "react-icons/fa"
 import { FaFacebook } from "react-icons/fa"
 import { FiInstagram } from "react-icons/fi"
 import { FaGithub } from "react-icons/fa"
-import { MdOutlineMailOutline } from "react-icons/md";
+import { MdOutlineMailOutline } from "react-icons/md"
 
 const Footer = () => {
   return (
-    <section className='relative bg-[#F0F0F0] flex flex-col items-center mt-15'>
-      <div className="px-15 max-w-7xl">
-        <div className='w-full bg-black rounded-3xl py-10 px-12 flex justify-between items-center -mt-20'>
-          <div className='w-1/2'>
-            <h1 className='font-dm text-4xl text-white font-extrabold'>
+    <section className='footer relative bg-[#F0F0F0] flex flex-col items-center mt-35 md:mt-22'>
+      <div className='footer-cont px-3 md:px-15 w-full max-w-7xl'>
+        <div className='footer-cta bg-black rounded-3xl py-8 px-6 md:py-10 md:px-8 lg:px-12 flex flex-col md:flex-row md:justify-between items-center gap-6 md:gap-5 -mt-35 md:-mt-28 lg:-mt-22'>
+          <div className='footer-cta__head w-full md:w-1/2'>
+            <h1 className='font-dm text-3xl sm:text-3xl lg:text-4xl text-white font-extrabold leading-tight'>
               STAY UPTO DATE ABOUT OUR LATEST OFFERS
             </h1>
           </div>
-          <div className="flex flex-col gap-3">
-          <div className="relative bg-white px-20 py-2 rounded-4xl">
-          <input type="email" placeholder="Enter your email address" className="w-full outline-none placeholder:font-dm placeholder:text-base" />
-          <MdOutlineMailOutline className="absolute size-7 left-4 top-1/2 -translate-y-1/2 text-gray-500" />
-          </div>
-          <button className="font-dm text-base bg-white text-black px-20 py-2 rounded-4xl">Subscribe to Newsletter</button>
+          <div className='footer-cta__input w-full md:w-auto flex flex-col gap-3 sm:min-w-85'>
+            <div className='relative bg-white px-4 py-3 rounded-full w-full flex items-center'>
+              <MdOutlineMailOutline className='absolute size-6 left-4 top-1/2 -translate-y-1/2 text-gray-500' />
+              <input
+                type='email'
+                placeholder='Enter your email address'
+                className='w-full pl-10 pr-2 outline-none font-dm text-sm sm:text-base text-black placeholder:text-gray-400 placeholder:text-base'
+              />
+            </div>
+            <button className='font-dm text-base font-semibold bg-white text-black py-3 px-6 rounded-full w-full hover:bg-gray-100 transition-colors'>
+              Subscribe to Newsletter
+            </button>
           </div>
         </div>
-        <div className='pb-10 mx-auto'>
+        <div className='footer-content pb-10 mx-auto'>
           <div className='flex justify-between gap-5 items-center py-10 border-b border-gray-300'>
             <div className='w-1/4 flex flex-col gap-8'>
               <Link to='/'>
