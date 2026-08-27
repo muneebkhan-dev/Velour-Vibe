@@ -48,7 +48,7 @@ const NewArrivalsSection = () => {
   ]
 
   return (
-    <section className="newarrivals-sec relative flex justify-center px-3 lg:px-0">
+    <section className="newarrivals-sec relative flex justify-center px-4 lg:px-0">
       <div className="newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 md:px-5 lg:px-10">
         <div>
           <h1 className='font-dm text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center'>

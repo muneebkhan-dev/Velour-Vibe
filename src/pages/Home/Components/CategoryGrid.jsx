@@ -33,7 +33,7 @@ const CategoryGrid = () => {
   ]
 
   return (
-    <section className='relative flex justify-center py-5 md:py-8 lg:py-10 px-3 md:px-10 lg:px-15 '>
+    <section className='relative flex justify-center py-5 md:py-8 lg:py-10 px-4 md:px-10 lg:px-15 '>
       <div className='max-w-7xl w-full bg-[#F0F0F0] rounded-3xl md:rounded-4xl py-6 md:pt-10 lg:py-15'>
         <div className='font-dm text-3xl md:text-4xl lg:text-5xl font-extrabold flex justify-center pt-4 md:pt-0 pb-6 md:pb-10 text-center tracking-tighter md:tracking-normal leading-8 md:leading-none'>
           <h1 className="w-3/4 md:w-auto">BROWSE BY DRESS STYLE</h1>

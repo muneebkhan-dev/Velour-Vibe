@@ -48,7 +48,7 @@ const TopSellingSection = () => {
 
   return (
     <section className="topselling-sec relative flex justify-center">
-      <div className="topselling-cont max-w-7xl px-3 md:px-5 lg:px-10 py-5 lg:py-0">
+      <div className="topselling-cont max-w-7xl px-4 md:px-5 lg:px-10 py-5 lg:py-0">
         <div className='topselling__info'>
           <h1 className='font-dm text-3xl lg:text-5xl font-extrabold py-5 md:py-10 lg:py-0 lg:pt-20 lg:pb-15 flex justify-center'>
             Top Selling

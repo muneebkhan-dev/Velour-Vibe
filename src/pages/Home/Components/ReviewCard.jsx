@@ -50,7 +50,7 @@ const ReviewCard = () => {
 
   return (
     <section className='relative py-10 md:py-20 overflow-hidden'>
-      <div className='max-w-7xl px-5 md:px-10 md:pb-5 lg:pb-10 mx-auto'>
+      <div className='max-w-7xl px-4 md:px-10 md:pb-5 lg:pb-10 mx-auto'>
         <div className='flex justify-between items-end md:items-center'>
           <div>
             <h1 className='font-dm text-3xl lg:text-5xl font-extrabold leading-8 md:leading-none tracking-tighter md:tracking-normal'>
@@ -66,7 +66,7 @@ const ReviewCard = () => {
       <div className='relative w-full overflow-hidden'>
         <div className='absolute left-0 top-0 bottom-0 w-20 md:bg-linear-to-r from-white via-white/40 lg:via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='absolute right-0 top-0 bottom-0 w-16 md:w-24 md:bg-linear-to-l from-white via-white/80 to-transparent z-10 pointer-events-none' />
-        <div className='flex gap-5 py-5 md:py-10 px-3 md:px-0 '>
+        <div className='flex gap-5 py-5 md:py-10 px-4 md:px-0 '>
           {ReviewCards.map((cards) => (
             <div className='w-full md:w-100 shrink-0 border-2 border-gray-200 p-5 md:p-6 rounded-3xl flex flex-col gap-3'>
               <span>{cards.rating}</span>

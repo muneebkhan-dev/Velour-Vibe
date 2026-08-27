@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="hero-section relative w-full bg-[#F2F0F1] lg:bg-[url('/src/assets/images/hero.png')] lg:min-h-screen bg-cover bg-center bg-no-repeat flex items-center">
       <div className='hero-cont max-w-7xl md:px-5 lg:px-10 mx-auto flex flex-col md:flex-row lg:flex-row items-center justify-center'>
-        <div className='w-auto md:w-1/2 lg:w-auto flex justify-center items-center px-5 md:px-0'>
+        <div className='w-auto md:w-1/2 lg:w-auto flex justify-center items-center px-4 md:px-0'>
           <div className='hero__content flex flex-col gap-7 md:gap-5 lg:gap-10 items-center md:items-start lg:items-start'>
             <div className='hero__info lg:w-1/2 flex flex-col gap-4 md:gap-4 lg:gap-6 text-start pt-10 md:pt-0'>
               <h1 className='font-dm text-4xl md:text-3xl lg:text-6xl  font-black md:font-extrabold tracking-tighter'>
