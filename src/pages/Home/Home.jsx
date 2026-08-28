@@ -6,16 +6,18 @@ import NewArrivalsSection from "./Components/NewArrivalsSection"
 import TopSellingSection from "./Components/TopSellingSection"
 import CategoryGrid from "./Components/CategoryGrid"
 import ReviewCard from "./Components/ReviewCard"
+import Breadcrumb from "../../Components/Breadcrumb"
 
 const Home = () => {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <BrandBar />
       <NewArrivalsSection />
       <TopSellingSection />
       <CategoryGrid />
-      <ReviewCard/>
+      <ReviewCard/> */}
+      <Breadcrumb/>
     </>
   )
 }
