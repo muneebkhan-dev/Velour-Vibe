@@ -8,15 +8,20 @@ import { IoMenu } from "react-icons/io5"
 import { MdDiscount } from "react-icons/md"
 import { IoSparkles } from "react-icons/io5"
 import { IoStorefront } from "react-icons/io5"
-import { IoChevronForwardOutline } from "react-icons/io5";
-import { FaHome } from "react-icons/fa";
+import { IoChevronForwardOutline } from "react-icons/io5"
+import { FaHome } from "react-icons/fa"
+import { useLocation } from "react-router-dom"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const Location = useLocation()
+
+  const isHome = location.pathname === "/"
+
   return (
     <nav className='relative'>
-      <div className='nav-content max-w-7xl px-4 md:px-10 lg:px-10 py-6 mx-auto flex justify-between items-center '>
+      <div className={`nav-content max-w-7xl px-4 md:px-10 lg:px-10 py-6 mx-auto flex justify-between ${isHome ? "border-none" : "border-b border-gray-200 "} items-center border-b border-gray-200`}>
         <div className='flex gap-3 md:gap-5 lg:gap-5'>
           <button
             className='lg:hidden cursor-pointer z-40'
@@ -49,8 +54,15 @@ const Navbar = () => {
             menuOpen ? "translate-x-0" : "translate-x-full"
           } z-50`}
         >
-          <button className="flex justify-end text-lg font-bold cursor-pointer" onClick={() => {setMenuOpen(false)}}>✕</button>
-          <div className="flex gap-7">
+          <button
+            className='flex justify-end text-lg font-bold cursor-pointer'
+            onClick={() => {
+              setMenuOpen(false)
+            }}
+          >
+            ✕
+          </button>
+          <div className='flex gap-7'>
             <ul className='flex flex-col gap-10'>
               <li>
                 <FaHome className='size-7' />
@@ -69,23 +81,38 @@ const Navbar = () => {
               </li>
             </ul>
             <ul className='flex flex-col gap-10 w-full'>
-              <Link className='flex items-center justify-between font-dm text-lg' to='/'>
+              <Link
+                className='flex items-center justify-between font-dm text-lg'
+                to='/'
+              >
                 Home
                 <IoChevronForwardOutline />
               </Link>
-              <Link className='flex items-center justify-between font-dm text-lg' to='/shop'>
+              <Link
+                className='flex items-center justify-between font-dm text-lg'
+                to='/shop'
+              >
                 Shop
                 <IoChevronForwardOutline />
               </Link>
-              <Link className='flex items-center justify-between font-dm text-lg' to='/onsale'>
+              <Link
+                className='flex items-center justify-between font-dm text-lg'
+                to='/onsale'
+              >
                 On Sale
                 <IoChevronForwardOutline />
               </Link>
-              <Link className='flex items-center justify-between font-dm text-lg' to='/newarrivals'>
+              <Link
+                className='flex items-center justify-between font-dm text-lg'
+                to='/newarrivals'
+              >
                 New Arrivals
                 <IoChevronForwardOutline />
               </Link>
-              <Link className='flex items-center justify-between font-dm text-lg' to='/brands'>
+              <Link
+                className='flex items-center justify-between font-dm text-lg'
+                to='/brands'
+              >
                 Brands
                 <IoChevronForwardOutline />
               </Link>
