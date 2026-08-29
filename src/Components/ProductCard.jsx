@@ -1,6 +1,7 @@
 import React from "react"
 import { IoIosStar } from "react-icons/io"
 import { LiaStarHalfSolid } from "react-icons/lia"
+import Breadcrumb from "./Breadcrumb"
 
 const ProductCard = ({ product }) => {
   return (

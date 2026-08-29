@@ -5,19 +5,18 @@ import BrandBar from "./Components/BrandBar"
 import NewArrivalsSection from "./Components/NewArrivalsSection"
 import TopSellingSection from "./Components/TopSellingSection"
 import CategoryGrid from "./Components/CategoryGrid"
-import ReviewCard from "./Components/ReviewCard"
-import Breadcrumb from "../../Components/Breadcrumb"
+import ProductCard from "../../Components/ProductCard"
+import Reviews from "./Components/Reviews"
 
 const Home = () => {
   return (
     <>
-      {/* <Hero />
+      <Hero />
       <BrandBar />
       <NewArrivalsSection />
       <TopSellingSection />
       <CategoryGrid />
-      <ReviewCard/> */}
-      <Breadcrumb/>
+      <Reviews/>
     </>
   )
 }

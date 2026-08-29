@@ -4,9 +4,10 @@ import { FaArrowRight } from "react-icons/fa6"
 import { IoIosStar } from "react-icons/io"
 import { FaCheckCircle } from "react-icons/fa";
 import Rating from "../../../Components/Rating"
+import ReviewCard from "../../../Components/ReviewCard";
 
-const ReviewCard = () => {
-  const ReviewCards = [
+const Reviews = () => {
+  const ReviewsData = [
     {
       id: 1,
       rating: <Rating />,
@@ -67,12 +68,8 @@ const ReviewCard = () => {
         <div className='absolute left-0 top-0 bottom-0 w-20 md:bg-linear-to-r from-white via-white/40 lg:via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='absolute right-0 top-0 bottom-0 w-16 md:w-24 md:bg-linear-to-l from-white via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='flex gap-5 py-5 md:py-10 px-4 md:px-0 '>
-          {ReviewCards.map((cards) => (
-            <div className='w-full md:w-100 shrink-0 border-2 border-gray-200 p-5 md:p-6 rounded-3xl flex flex-col gap-3'>
-              <span>{cards.rating}</span>
-              <h3 className="font-dm text-xl font-bold flex items-center gap-2">{cards.title}<FaCheckCircle className="text-green-500"/></h3>
-              <p className="font-dm text-base md:text-[15px] text-gray-500">"{cards.description}"</p>
-            </div>
+          {ReviewsData.map((cards) => (
+            <ReviewCard cards={cards}/>
           ))}
         </div>
       </div>
@@ -80,4 +77,4 @@ const ReviewCard = () => {
   )
 }
 
-export default ReviewCard
+export default Reviews
