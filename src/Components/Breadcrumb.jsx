@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Breadcrumb = () => {
   return (
     <section className='relative py-10'>
-      <div className='max-w-7xl mx-auto px-15'>
+      <div className='max-w-7xl w-full mx-auto px-10'>
         <div>
           <ul className="flex items-center gap-4 "> 
             <li className="font-dm text-gray-400">Home</li>
