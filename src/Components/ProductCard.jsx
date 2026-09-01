@@ -2,6 +2,7 @@ import React from "react"
 import { IoIosStar } from "react-icons/io"
 import { LiaStarHalfSolid } from "react-icons/lia"
 import Breadcrumb from "./Breadcrumb"
+import Rating from "./Rating"
 
 const ProductCard = ({ product }) => {
   return (
@@ -11,14 +12,7 @@ const ProductCard = ({ product }) => {
         <h3 className='font-dm text-base lg:text-xl font-semibold'>{product.title}</h3>
         {product.rating === 4.5 && (
           <>
-            <div className='flex items-center gap-1 text-[#FFC633]'>
-              <IoIosStar className='size-4 md:size-4 lg:size-5' />
-              <IoIosStar className='size-4 md:size-4 lg:size-5' />
-              <IoIosStar className='size-4 md:size-4 lg:size-5' />
-              <IoIosStar className='size-4 md:size-4 lg:size-5' />
-              <LiaStarHalfSolid className='size-5' />
-              <p className='text-black text-xs md:text-sm lg:text-base'>4.5/5</p>
-            </div>
+            <Rating/>
           </>
         )}
         <div className='flex gap-3'>
