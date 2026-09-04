@@ -69,7 +69,7 @@ const Reviews = () => {
         <div className='absolute right-0 top-0 bottom-0 w-16 md:w-24 md:bg-linear-to-l from-white via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='flex gap-5 py-5 md:py-10 px-4 md:px-0'>
           {ReviewsData.map((cards) => (
-            <ReviewCard cards={cards}/>
+            <ReviewCard  key={cards.id || index} className="md:w-100" cards={cards}/>
           ))}
         </div>
       </div>

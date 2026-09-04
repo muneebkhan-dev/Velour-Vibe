@@ -46,11 +46,19 @@ const RatingReviews = () => {
       description:
         "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
     },
+
+    {
+      id: 6,
+      rating: <Rating />,
+      title: "Mooen",
+      description:
+        "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+    },
   ]
 
   return (
     <section className='relative py-5'>
-      <div className='max-w-7xl w-full mx-auto px-10'>
+      <div className='max-w-7xl w-full mx-auto px-10 flex flex-col gap-5'>
         <div className="flex justify-between">
           <div className='flex gap-2 items-center'>
             <h2 className='font-dm font-bold text-lg'>All Reviews</h2>
@@ -73,10 +81,15 @@ const RatingReviews = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
-       {ReviewsData.map((cards) => (
-           <ReviewCard cards={cards}/>
+        <div className="grid grid-cols-2 gap-3">
+       {ReviewsData.map((cards, index) => (
+           <ReviewCard key={cards.id || index} className="md:w-full" cards={cards}/>
         ))}
+        </div>
+        <div className="flex items-center justify-center pt-3">
+            <button className="font-dm text-sm border border-gray-300 py-3 px-8 rounded-3xl">
+                Load More Reviews
+            </button>
         </div>
       </div>
     </section>
