@@ -18,7 +18,7 @@ const FAQTab = () => {
           returns and shopping experience.
         </p>
       </div>
-      <div className="mx-auto max-w-4xl space-y-4">
+      <div className="mx-auto  max-w-4xl space-y-4">
 
         {/* FAQ 1 */}
         <div className="group rounded-2xl border border-gray-200 bg-white p-5 md:p-6 transition duration-300 hover:border-[#00D0B0]/40 hover:shadow-md">
