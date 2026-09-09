@@ -16,7 +16,7 @@ const Home = () => {
       <NewArrivalsSection />
       <TopSellingSection />
       <CategoryGrid />
-      <Reviews/>
+      <Reviews />
     </>
   )
 }

@@ -1,9 +1,16 @@
-import React from 'react'
+import {
+  FiCheckCircle,
+  FiTruck,
+  FiRefreshCcw,
+  FiShield,
+} from "react-icons/fi";
 
-const Details = () => {
+const ProductDetailsTab = () => {
   return (
-    <div>Details</div>
-  )
-}
+    <section className="relative py-5">
+    FaQs
+    </section>
+  );
+};
 
-export default Details
+export default ProductDetailsTab;
