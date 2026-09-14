@@ -49,9 +49,9 @@ const RelativeProducts = () => {
 
   return (
     <section className="newarrivals-sec relative flex justify-center px-4 lg:px-0">
-          <div className="newarrivals-cont max-w-7xl w-full py-15 lg:py-0 lg:pb-15 md:px-5 lg:px-10">
-            <div>
-              <h1 className='font-dm text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center uppercase'>
+          <div className="newarrivals-cont max-w-7xl w-full py-10 md:py-15 lg:py-0 lg:pb-15 md:px-5 lg:px-10">
+            <div className='flex items-center justify-center'>
+              <h1 className='font-dm text-3xl lg:text-5xl font-extrabold pb-10 lg:pb-15 flex justify-center uppercase text-center'>
                 You might also like
               </h1>
             </div>
