@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home/Home"
-import Shop from "./pages/Shop/Shop"
 import Brands from "./pages/Brands"
 import NewArrivals from "./pages/NewArrivals"
 import OnSale from "./pages/OnSale"
 import MainLayout from "./Layout/MainLayout"
 import ProductDetails from "./pages/ProductDetails/ProductDetails"
+import Cart from "./pages/Cart"
+import Shop from "./pages/shop/shop"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/newarrivals" element={<NewArrivals/>}/> 
         <Route path="/brands" element={<Brands/>}/> 
         <Route path="/productdetails" element={<ProductDetails/>}/> 
+        <Route path="/cart" element={<Cart/>}/> 
         </Route>
       </Routes>
     </>

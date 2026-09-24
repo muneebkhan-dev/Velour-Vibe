@@ -2,7 +2,8 @@ import React from "react";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import ProductCard from "../../Components/ProductCard";
-const shop = () => {
+import Breadcrumb from "../../Components/Breadcrumb";
+const Shop = () => {
 
   const products = [
     {
@@ -103,7 +104,9 @@ const shop = () => {
   ]
 
   return (
-    <section className='relative py-8 md:py-10'>
+    <>
+    <Breadcrumb/>
+    <section className='relative pb-8 md:pb-10 md:pt-0'>
       <div className='max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-10'>
         <div className='flex flex-col lg:flex-row gap-6 lg:gap-8'>
           <div className='w-full lg:w-1/4 xl:w-[23%] border border-gray-200 rounded-2xl p-5'>
@@ -279,7 +282,8 @@ const shop = () => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
-export default shop
+export default Shop
