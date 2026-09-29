@@ -7,6 +7,7 @@ import {
   FiTruck,
 } from "react-icons/fi";
 import ProductCard from "../Components/ProductCard";
+import Breadcrumb from "../Components/Breadcrumb";
 
 const OnSale = () => {
 
@@ -111,8 +112,9 @@ const OnSale = () => {
   
   return (
     <main>
-      <section className='mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8'>
-        <div className='relative overflow-hidden rounded-3xl bg-black px-6 py-12 text-white sm:px-10 md:px-14 md:py-16'>
+      <Breadcrumb/>
+      <section className='mx-auto max-w-7xl px-4 py-8 sm:px-6 md:pb-12 lg:px-8'>
+        <div className='relative overflow-hidden rounded-3xl bg-black px-6 py-12 text-white sm:px-10 md:px-14 md:pb-16'>
           {/* Decorative circles */}
           <div className='absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#00D0B0]/20 blur-2xl' />
           <div className='absolute -bottom-24 right-24 h-48 w-48 rounded-full bg-[#00D0B0]/10 blur-2xl' />
