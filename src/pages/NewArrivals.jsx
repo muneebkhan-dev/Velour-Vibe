@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiArrowRight, FiChevronDown } from "react-icons/fi";
 import ProductCard from '../Components/ProductCard';
+import Breadcrumb from '../Components/Breadcrumb';
 
 const NewArrivals = () => {
 
@@ -105,6 +106,7 @@ const NewArrivals = () => {
 
   return (
     <main>
+      <Breadcrumb/>
       <section className="mx-auto max-w-7xl px-4 pb-7 pt-8 sm:px-6 md:pt-10 lg:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
