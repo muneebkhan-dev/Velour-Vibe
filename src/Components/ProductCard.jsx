@@ -8,13 +8,11 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div className='flex flex-col md:gap-2'>
-        <span className="aspect-4/3 pb-2 md:pb-0"><img className="h-full w-full object-cover" src={product.img} alt="" /></span>
+        <span className="aspect-4/3 pb-2 md:pb-0"><img className="h-full w-full object-cover" src={product.images[0]} alt="" /></span>
         <h3 className='font-dm text-base lg:text-xl font-semibold'>{product.title}</h3>
-        {product.rating === 4.5 && (
           <>
             <Rating/>
           </>
-        )}
         <div className='flex gap-3'>
           <span className='font-dm text-xl lg:text-2xl font-semibold'>
             {product.price}
