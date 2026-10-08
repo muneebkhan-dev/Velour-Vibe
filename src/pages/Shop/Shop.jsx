@@ -4,25 +4,10 @@ import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io"
 import { FaStar } from "react-icons/fa"
 import ProductCard from "../../Components/ProductCard"
 import Breadcrumb from "../../Components/Breadcrumb"
-import getProducts from "../../api/products"
+import { useProducts } from "../../context/ProductContext"
 
 const Shop = () => {
- const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadProducts = async () => {
-      setLoading(true);
-      const data = await getProducts();
-      setProducts(data || []);
-      setLoading(false);
-    };
-
-    loadProducts();
-  }, []);
-
-    console.log(products);
-
+  const { products, loading, error } = useProducts();
 
 
   return (
@@ -176,6 +161,11 @@ const Shop = () => {
                   </button>
                 </div>
               </div>
+              {loading && (
+                <div className='text-center py-10 font-dm text-gray-500'>
+                  Products Loading...
+                </div>
+              )}
               <div className='grid grid-cols-1 min-[420px]:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8'>
                 {products.map((product) => (
                   <ProductCard key={product.id} product={product} />

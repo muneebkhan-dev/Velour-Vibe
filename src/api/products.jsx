@@ -1,6 +1,6 @@
 const getProducts = async () => {
   try {
-    const response = await fetch("https://dummyjson.com/products/category/mens-shirts");
+    const response = await fetch("https://api.escuelajs.co/api/v1/products");
 
     if (!response.ok) {
       throw new Error("Failed to fetch products");
