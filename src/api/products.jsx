@@ -1,17 +1,30 @@
+const clothesCategories = [
+  "mens-shirts",
+  "womens-dresses",
+  "tops",
+  "mens-shoes",
+  "womens-shoes",
+]
+
 const getProducts = async () => {
   try {
-    const response = await fetch("https://api.escuelajs.co/api/v1/products");
+    const response = await fetch("https://dummyjson.com/products?limit=0", {
+      cache: "no-store",
+    })
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
-    }
+    if (!response.ok) throw new Error("Fetch failed")
 
-    const data = await response.json();
-    return data.products || [];
+    const data = await response.json()
+    const clothesProducts = data.products.filter((product) =>
+      clothesCategories.includes(product.category),
+    )
+    console.log("FakeStore API Data:", data)
+
+    return clothesProducts
   } catch (error) {
-    console.error("Error fetching products:", error);
-    return []; // Return empty array so map() doesn't fail
+    console.error("API Error:", error)
+    return []
   }
-};
+}
 
-export default getProducts;
+export default getProducts

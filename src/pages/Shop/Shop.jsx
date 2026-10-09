@@ -9,6 +9,8 @@ import { useProducts } from "../../context/ProductContext"
 const Shop = () => {
   const { products, loading, error } = useProducts();
 
+  console.log(products)
+
 
   return (
     <>
