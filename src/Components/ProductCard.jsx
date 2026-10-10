@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
         <span className="aspect-4/3 pb-2 md:pb-0"><img className="h-full w-full object-cover" src={product.images[0]} alt="" /></span>
         <h3 className='font-dm text-base lg:text-xl font-semibold'>{product.title}</h3>
           <>
-            <Rating/>
+            <Rating rating={product.rating}/>
           </>
         <div className='flex gap-3'>
           <span className='font-dm text-xl lg:text-2xl font-semibold'>
