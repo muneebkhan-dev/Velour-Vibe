@@ -5,114 +5,17 @@ import {
   FiTag,
   FiPercent,
   FiTruck,
-} from "react-icons/fi";
-import ProductCard from "../Components/ProductCard";
-import Breadcrumb from "../Components/Breadcrumb";
+} from "react-icons/fi"
+import ProductCard from "../Components/ProductCard"
+import Breadcrumb from "../Components/Breadcrumb"
+import { useProducts } from "../context/ProductContext"
 
 const OnSale = () => {
+  const { products, loading, error } = useProducts()
 
-   const products = [
-    {
-      id: 1,
-      img: "/src/assets/images/CardImages/proimg-1.png",
-      title: "T-shirt with Tape",
-      rating: 4.5,
-      price: "$120",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 2,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 3,
-      img: "/src/assets/images/CardImages/proimg-3.png",
-      title: "Checkered Shirt",
-      rating: 4.5,
-      price: "$180",
-      
-      category: "shirts",
-    },
-    
-    {
-      id: 4,
-      img: "/src/assets/images/CardImages/proimg-4.png",
-      title: "Sleeve Striped T-shirt",
-      rating: 4.5,
-      price: "$130",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 5,
-      img: "/src/assets/images/CardImages/proimg-1.png",
-      title: "T-shirt with Tape",
-      rating: 4.5,
-      price: "$120",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 6,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 7,
-      img: "/src/assets/images/CardImages/proimg-3.png",
-      title: "Checkered Shirt",
-      rating: 4.5,
-      price: "$180",
-      
-      category: "shirts",
-    },
-    
-    {
-      id: 8,
-      img: "/src/assets/images/CardImages/proimg-4.png",
-      title: "Sleeve Striped T-shirt",
-      rating: 4.5,
-      price: "$130",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 9,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-    
-  ]
-
-  
   return (
     <main>
-      <Breadcrumb/>
+      <Breadcrumb />
       <section className='mx-auto max-w-7xl px-4 py-8 sm:px-6 md:pb-12 lg:px-8'>
         <div className='relative overflow-hidden rounded-3xl bg-black px-6 py-12 text-white sm:px-10 md:px-14 md:pb-16'>
           {/* Decorative circles */}
@@ -212,6 +115,11 @@ const OnSale = () => {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+        {loading && (
+          <div className='text-center py-10 font-dm text-gray-500'>
+            Products Loading...
+          </div>
+        )}
         <div className='mt-12 flex justify-center'>
           <button className='flex w-full max-w-xs items-center justify-center gap-2 rounded-full border border-black px-7 py-3 text-sm font-semibold transition hover:bg-black hover:text-white sm:w-auto'>
             View More

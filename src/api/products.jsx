@@ -4,6 +4,11 @@ const clothesCategories = [
   "tops",
   "mens-shoes",
   "womens-shoes",
+  'mens-watches',
+  'womens-watches',
+  'womens-bags',
+  'womens-jewellery',
+  'sunglasses'
 ]
 
 const getProducts = async () => {
