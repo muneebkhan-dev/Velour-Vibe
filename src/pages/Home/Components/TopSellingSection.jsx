@@ -4,6 +4,7 @@ import { useProducts } from '../../../context/ProductContext'
 
 const TopSellingSection = () => {
   const { products, loading, error } = useProducts()
+  
 
   return (
     <section className="topselling-sec relative flex justify-center">

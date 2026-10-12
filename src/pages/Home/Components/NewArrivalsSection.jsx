@@ -5,6 +5,11 @@ import { useProducts } from "../../../context/ProductContext"
 const NewArrivalsSection = () => {
   const { products, loading, error } = useProducts()
 
+  const sortedProducts = [...products].sort((a, b) => {
+    return new Date(b.meta.createdAt) - new Date(a.meta.createdAt)
+  })
+  const latestFour = sortedProducts.slice(0, 4)
+
   return (
     <section className='newarrivals-sec relative flex justify-center px-4 lg:px-0'>
       <div className='newarrivals-cont max-w-7xl w-full border-b border-gray-300 py-15 lg:py-20 md:px-5 lg:px-10'>
@@ -14,7 +19,7 @@ const NewArrivalsSection = () => {
           </h1>
         </div>
         <div className='flex gap-4 justify-center'>
-          {products.map((product, index) => (
+          {latestFour.map((product, index) => (
             <div
               className={`product-card  ${index >= 2 ? "hidden md:flex" : ""}`}
             >

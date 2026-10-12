@@ -13,9 +13,7 @@ const Rating = ({ rating }) => {
           return (
             <IoIosStar
               key={index}
-              className='size-4 md:size-4 lg:size-5'
-              fill='#FFC107'
-              color='#FFC107'
+              className='size-4 md:size-4 lg:size-5 text-[#FFC107]'
             />
           )
         } else if (
@@ -25,17 +23,14 @@ const Rating = ({ rating }) => {
           return (
             <LiaStarHalfSolid
               key={index}
-              className='size-4 md:size-4 lg:size-5'
-              fill='#FFC107'
-              color='#FFC107'
+              className='size-4 md:size-4 lg:size-5 text-[#FFC107]'
             />
           )
         } else {
           return (
             <IoIosStar
               key={index}
-              className='size-4 md:size-4 lg:size-5'
-              color='#e0e0e0'
+              className='size-4 md:size-4 lg:size-5 text-[#e0e0e0]'
             />
           )
         }

@@ -15,16 +15,14 @@ const ProductCard = ({ product }) => {
           </>
         <div className='flex gap-3'>
           <span className='font-dm text-xl lg:text-2xl font-semibold'>
-            {product.price}
+            ${product.price}
           </span>
-          {product.originalPrice && (
             <div className="flex gap-2">
             <span className='line-through text-gray-400 font-dm text-xl lg:text-2xl font-semibold'>
               {product.originalPrice}
             </span>
-            <span className="text-xs bg-[#FF3333]/10 text-[#FF3333] rounded-3xl md:rounded-2xl flex items-center px-2 md:p-2">-20%</span>
+            <span className="text-xs bg-[#FF3333]/10 text-[#FF3333] rounded-3xl md:rounded-2xl flex items-center px-2 md:p-2">-{product.discountPercentage}%</span>
             </div>
-          )}
         </div>
       </div>
     </>
