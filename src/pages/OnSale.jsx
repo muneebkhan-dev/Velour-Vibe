@@ -13,6 +13,10 @@ import { useProducts } from "../context/ProductContext"
 const OnSale = () => {
   const { products, loading, error } = useProducts()
 
+  const onSaleProducts = [...products].filter((p) => {
+      return p.discountPercentage >= 15
+    })
+
   return (
     <main>
       <Breadcrumb />
@@ -111,7 +115,7 @@ const OnSale = () => {
           </button>
         </div>
         <div className='grid grid-cols-1 min-[420px]:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8'>
-          {products.map((product) => (
+          {onSaleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
