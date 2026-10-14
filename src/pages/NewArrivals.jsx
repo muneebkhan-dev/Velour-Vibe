@@ -7,6 +7,11 @@ import { useProducts } from "../context/ProductContext"
 const NewArrivals = () => {
   const { products, loading, error } = useProducts()
 
+  const sortedProducts = [...products].sort((a, b) => {
+    return new Date(b.meta.createdAt) - new Date(a.meta.createdAt)
+  })
+  const latestProducts = sortedProducts.slice(0, 20)
+
   return (
     <main>
       <Breadcrumb />
@@ -35,7 +40,7 @@ const NewArrivals = () => {
       </section>
       <section className='mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8'>
         <div className='grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-5 md:grid-cols-3 lg:grid-cols-4'>
-          {products.map((product) => (
+          {latestProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
