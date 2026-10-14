@@ -4,6 +4,11 @@ import { useProducts } from '../../../context/ProductContext'
 
 const TopSellingSection = () => {
   const { products, loading, error } = useProducts()
+
+  const sortedProducts = [...products].filter((p) => {
+      return p.rating >= 4.9
+    })
+    const topFour = sortedProducts.slice(0, 4)
   
 
   return (
@@ -15,7 +20,7 @@ const TopSellingSection = () => {
           </h1>
         </div>
         <div className="flex gap-4">
-         {products.map((product, index) => (
+         {topFour.map((product, index) => (
           <div className={`product-card  ${index >= 2 ? 'hidden md:flex' : ''}`}>
           <ProductCard product={product} key={product.id} />
           </div>
