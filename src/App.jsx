@@ -8,20 +8,19 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails"
 import Cart from "./pages/Cart"
 import Shop from "./pages/shop/shop"
 
-
 function App() {
-
   return (
     <>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />}/>
-        <Route path="/shop" element={<Shop/>}/> 
-        <Route path="/onsale" element={<OnSale/>}/> 
-        <Route path="/newarrivals" element={<NewArrivals/>}/> 
-        <Route path="/brands" element={<Brands/>}/> 
-        <Route path="/productdetails" element={<ProductDetails/>}/> 
-        <Route path="/cart" element={<Cart/>}/> 
+        <Route path='/' element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/onsale' element={<OnSale />} />
+          <Route path='/newarrivals' element={<NewArrivals />} />
+          <Route path='/brands' element={<Brands />} />
+          <Route path='/productdetails' element={<ProductDetails />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
         </Route>
       </Routes>
     </>
