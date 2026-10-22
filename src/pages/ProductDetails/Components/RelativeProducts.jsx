@@ -6,7 +6,7 @@ const RelativeProducts = () => {
     const Products = [
     {
       id: 1,
-      img: "/src/assets/images/CardImages/proimg-1.png",
+      images: "/src/assets/images/CardImages/proimg-1.png",
       title: "T-shirt with Tape",
       rating: 4.5,
       price: "$120",
@@ -16,7 +16,7 @@ const RelativeProducts = () => {
 
     {
       id: 2,
-      img: "/src/assets/images/CardImages/proimg-2.png",
+      images: "/src/assets/images/CardImages/proimg-2.png",
       title: "Skinny Fit Jeans",
       rating: 4.5,
       price: "$240",
@@ -27,7 +27,7 @@ const RelativeProducts = () => {
 
     {
       id: 3,
-      img: "/src/assets/images/CardImages/proimg-3.png",
+      images: "/src/assets/images/CardImages/proimg-3.png",
       title: "Checkered Shirt",
       rating: 4.5,
       price: "$180",
@@ -37,7 +37,7 @@ const RelativeProducts = () => {
     
     {
       id: 4,
-      img: "/src/assets/images/CardImages/proimg-4.png",
+      images: "/src/assets/images/CardImages/proimg-4.png",
       title: "Sleeve Striped T-shirt",
       rating: 4.5,
       price: "$130",

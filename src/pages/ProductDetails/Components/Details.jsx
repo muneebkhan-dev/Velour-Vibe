@@ -4,8 +4,10 @@ import {
   FiRefreshCcw,
   FiShield,
 } from "react-icons/fi";
+import { useProducts } from "../../../context/ProductContext";
 
 const ProductDetailsTab = () => {
+
   return (
     <section className="relative py-5">
     <div className="mt-8 font-dm max-w-7xl w-full mx-auto px-5 lg:px-10">
@@ -20,8 +22,6 @@ const ProductDetailsTab = () => {
           regular fit, it is perfect for casual outings and everyday wear.
         </p>
       </div>
-
-      {/* Specifications */}
       <div className="mb-10">
         <h3 className="text-xl md:text-2xl font-semibold mb-5">
           Specifications
@@ -61,8 +61,6 @@ const ProductDetailsTab = () => {
 
         </div>
       </div>
-
-      {/* Features */}
       <div className="mb-10">
         <h3 className="text-xl md:text-2xl font-semibold mb-5">
           Why You'll Love It
@@ -116,8 +114,6 @@ const ProductDetailsTab = () => {
 
         </div>
       </div>
-
-      {/* Shipping */}
       <div className="rounded-2xl bg-[#00D0B0]/5 border border-[#00D0B0]/20 p-5 md:p-6">
         <div className="flex gap-4 items-start">
 
