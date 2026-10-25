@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
           <span className='font-dm text-xl lg:text-2xl font-semibold'>
             ${product.price}
           </span>
-            <div className="flex gap-2">
+           <div className="flex gap-2">
             <span className="text-xs bg-[#FF3333]/10 text-[#FF3333] rounded-3xl md:rounded-2xl flex items-center px-2 md:p-2">-{product.discountPercentage}%</span>
             </div>
         </div>
