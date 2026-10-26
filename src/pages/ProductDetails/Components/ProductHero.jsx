@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useState } from "react";
 import Rating from "../../../Components/Rating";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
@@ -8,7 +9,12 @@ import { useProducts } from "../../../context/ProductContext";
 const ProductHero = () => {
   const { id } = useParams();
   const { products, loading, error } = useProducts();
+  const [count, setCount] = useState(1)
 
+
+  
+
+  
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-16 text-center text-gray-500">
@@ -57,6 +63,18 @@ const ProductHero = () => {
       ? "Out of Stock"
       : singleProduct.availabilityStatus || "In Stock";
 
+  const handleIncrease = () => {
+    if(count < stock){
+      setCount = count + 1
+    }
+  }
+
+  const handleDecrease = () => {
+    if(count < stock){
+      setCount = count - 1
+    }
+  }
+    
   const isOutOfStock = stock === 0;
 
   return (
@@ -181,18 +199,20 @@ const ProductHero = () => {
                 type="button"
                 aria-label="Decrease quantity"
                 className="text-lg"
+                onClick={() => handleIncrease()}
               >
                 <FaMinus />
               </button>
 
-              <span className="text-base font-medium">1</span>
+              <span className="text-base font-medium">{count}</span>
 
               <button
                 type="button"
                 aria-label="Increase quantity"
                 className="text-lg"
+                onClick={() => handleDecrease()}
               >
-                <FaPlus />
+                <FaPlus/>
               </button>
             </div>
 
