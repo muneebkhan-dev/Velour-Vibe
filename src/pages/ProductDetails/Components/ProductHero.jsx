@@ -65,13 +65,13 @@ const ProductHero = () => {
 
   const handleIncrease = () => {
     if(count < stock){
-      setCount = count + 1
+      setCount(count + 1)
     }
   }
 
   const handleDecrease = () => {
-    if(count < stock){
-      setCount = count - 1
+    if(count > 1){
+      setCount(count - 1)
     }
   }
     
@@ -198,8 +198,8 @@ const ProductHero = () => {
               <button
                 type="button"
                 aria-label="Decrease quantity"
-                className="text-lg"
-                onClick={() => handleIncrease()}
+                className="text-lg cursor-pointer"
+                onClick={handleDecrease}
               >
                 <FaMinus />
               </button>
@@ -209,8 +209,8 @@ const ProductHero = () => {
               <button
                 type="button"
                 aria-label="Increase quantity"
-                className="text-lg"
-                onClick={() => handleDecrease()}
+                className="text-lg cursor-pointer"
+                onClick={handleIncrease}
               >
                 <FaPlus/>
               </button>
