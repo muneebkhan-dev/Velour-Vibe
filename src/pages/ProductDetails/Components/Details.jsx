@@ -1,143 +1,132 @@
 import {
-  FiCheckCircle,
+  FiBox,
+  FiTag,
+  FiLayers,
+  FiMaximize2,
   FiTruck,
-  FiRefreshCcw,
-  FiShield,
-} from "react-icons/fi";
-import { useProducts } from "../../../context/ProductContext";
+  FiCheckCircle,
+} from "react-icons/fi"
+import { useProducts } from "../../../context/ProductContext"
+import { useParams } from "react-router-dom";
 
 const ProductDetailsTab = () => {
+    const { id } = useParams();
+  const { products, loading, error } = useProducts()
+
+  const singleProduct = products.find((p) => String(p.id) === String(id))
 
   return (
-    <section className="relative py-5">
-    <div className="mt-8 font-dm max-w-7xl w-full mx-auto px-5 lg:px-10">
-      <div className="mb-10">
-        <h3 className="text-xl md:text-2xl font-semibold mb-3">
-          Product Details
-        </h3>
-
-        <p className="text-gray-600 text-sm md:text-base leading-7 max-w-4xl">
-          This premium cotton t-shirt is designed for everyday comfort and
-          effortless style. Made with soft, breathable fabric and a modern
-          regular fit, it is perfect for casual outings and everyday wear.
-        </p>
-      </div>
-      <div className="mb-10">
-        <h3 className="text-xl md:text-2xl font-semibold mb-5">
-          Specifications
-        </h3>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Material</span>
-            <span className="font-medium">100% Cotton</span>
+    <section className='relative py-5'>
+      <div className='mt-8 font-dm max-w-7xl w-full mx-auto px-5 lg:px-10'>
+        <div className='mb-10'>
+          <h3 className='text-xl md:text-2xl font-semibold mb-3'>
+            Product Details & Information
+          </h3>
+          <p className='text-gray-600 text-sm md:text-base leading-7 max-w-4xl'>
+           {singleProduct.description}
+          </p>
+        </div>
+        <div className='mb-10'>
+          <h3 className='text-xl md:text-2xl font-semibold mb-5'>
+            Key Specifications
+          </h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiBox className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Brand
+                </span>
+                <span className='font-semibold text-gray-800'>
+                  {singleProduct.brand?(
+                    singleProduct.brand
+                    ): (<div>Not available</div>)}
+                </span>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiTag className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Category
+                </span>
+                <span className='font-semibold text-gray-800'>
+                  {singleProduct.category}
+                </span>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiLayers className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Weight
+                </span>
+                <span className='font-semibold text-gray-800'>
+                  {singleProduct.weight}
+                </span>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiMaximize2 className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Width
+                </span>
+                <span className='font-semibold text-gray-800'>{singleProduct.dimensions.width}</span>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiMaximize2 className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Height
+                </span>
+                <span className='font-semibold text-gray-800'>{singleProduct.dimensions.height}</span>
+              </div>
+            </div>
+            <div className='flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition'>
+              <div className='w-10 h-10 rounded-lg bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+                <FiMaximize2 className='text-[#00D0B0] text-lg' />
+              </div>
+              <div>
+                <span className='text-xs text-gray-400 block mb-0.5'>
+                  Depth
+                </span>
+                <span className='font-semibold text-gray-800'>{singleProduct.dimensions.depth}</span>
+              </div>
+            </div>
           </div>
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Fit</span>
-            <span className="font-medium">Regular Fit</span>
+        </div>
+        <div className='rounded-2xl bg-[#00D0B0]/5 border border-[#00D0B0]/20 p-5 md:p-6'>
+          <div className='flex gap-4 items-start'>
+            <div className='w-11 h-11 rounded-full bg-[#00D0B0]/10 flex items-center justify-center shrink-0'>
+              <FiCheckCircle className='text-[#00D0B0] text-xl' />
+            </div>
+            <div>
+              <h3 className='font-semibold text-lg mb-1'>
+                Authenticity & Warranty Guaranteed
+              </h3>
+              <p className='text-sm text-gray-600 leading-6'>
+                All products go through strict quality checks to ensure standard
+                specifications match. Backed by our standard return and support
+                policy.
+              </p>
+            </div>
           </div>
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Neck</span>
-            <span className="font-medium">Round Neck</span>
-          </div>
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Sleeves</span>
-            <span className="font-medium">Short Sleeve</span>
-          </div>
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Fabric</span>
-            <span className="font-medium">Breathable</span>
-          </div>
-
-          <div className="flex justify-between items-center rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
-            <span className="text-gray-500">Care</span>
-            <span className="font-medium">Machine Wash</span>
-          </div>
-
         </div>
       </div>
-      <div className="mb-10">
-        <h3 className="text-xl md:text-2xl font-semibold mb-5">
-          Why You'll Love It
-        </h3>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-          <div className="flex gap-3 items-start p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition">
-            <FiCheckCircle className="text-[#00D0B0] text-xl mt-0.5 shrink-0" />
-
-            <div>
-              <h4 className="font-semibold mb-1">Premium Comfort</h4>
-              <p className="text-sm text-gray-500">
-                Soft fabric designed to keep you comfortable throughout the day.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 items-start p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition">
-            <FiShield className="text-[#00D0B0] text-xl mt-0.5 shrink-0" />
-
-            <div>
-              <h4 className="font-semibold mb-1">Durable Quality</h4>
-              <p className="text-sm text-gray-500">
-                Carefully constructed for long-lasting everyday use.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 items-start p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition">
-            <FiCheckCircle className="text-[#00D0B0] text-xl mt-0.5 shrink-0" />
-
-            <div>
-              <h4 className="font-semibold mb-1">Modern Design</h4>
-              <p className="text-sm text-gray-500">
-                A clean and versatile design that works with any outfit.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 items-start p-4 rounded-xl border border-gray-100 hover:border-gray-300 transition">
-            <FiRefreshCcw className="text-[#00D0B0] text-xl mt-0.5 shrink-0" />
-
-            <div>
-              <h4 className="font-semibold mb-1">Easy Care</h4>
-              <p className="text-sm text-gray-500">
-                Simple washing instructions make maintenance effortless.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div className="rounded-2xl bg-[#00D0B0]/5 border border-[#00D0B0]/20 p-5 md:p-6">
-        <div className="flex gap-4 items-start">
-
-          <div className="w-11 h-11 rounded-full bg-[#00D0B0]/10 flex items-center justify-center shrink-0">
-            <FiTruck className="text-[#00D0B0] text-xl" />
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-1">
-              Shipping & Delivery
-            </h3>
-
-            <p className="text-sm text-gray-600 leading-6">
-              Estimated delivery within 3–5 working days.
-              Free shipping is available on qualifying orders.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
     </section>
-  );
-};
+  )
+}
 
-export default ProductDetailsTab;
+export default ProductDetailsTab

@@ -11,9 +11,6 @@ const ProductHero = () => {
   const { products, loading, error } = useProducts();
   const [count, setCount] = useState(1)
 
-
-  
-
   
   if (loading) {
     return (
