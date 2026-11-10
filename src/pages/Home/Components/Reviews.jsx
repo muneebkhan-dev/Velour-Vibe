@@ -10,7 +10,7 @@ const Reviews = () => {
   const ReviewsData = [
     {
       id: 1,
-      rating: <Rating />,
+      rating: 4.9,
       title: "Hamid T.",
       description:
         "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
@@ -18,7 +18,7 @@ const Reviews = () => {
 
     {
       id: 2,
-      rating: <Rating />,
+      rating: 4.8,
       title: "Sarah M.",
       description:
         "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
@@ -26,7 +26,7 @@ const Reviews = () => {
 
     {
       id: 3,
-      rating: <Rating />,
+      rating: 4.4,
       title: "Ali K.",
       description:
         "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
@@ -34,7 +34,7 @@ const Reviews = () => {
 
     {
       id: 4,
-      rating: <Rating />,
+      rating: 4.3,
       title: "Faiz L.",
       description:
         "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
@@ -42,7 +42,7 @@ const Reviews = () => {
 
     {
       id: 5,
-      rating: <Rating />,
+      rating: 4.1,
       title: "Mooen",
       description:
         "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
@@ -68,8 +68,8 @@ const Reviews = () => {
         <div className='absolute left-0 top-0 bottom-0 w-20 md:bg-linear-to-r from-white via-white/40 lg:via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='absolute right-0 top-0 bottom-0 w-16 md:w-24 md:bg-linear-to-l from-white via-white/80 to-transparent z-10 pointer-events-none' />
         <div className='flex gap-5 py-5 md:py-10 px-4 md:px-0'>
-          {ReviewsData.map((cards) => (
-            <ReviewCard  key={cards.id || index} className="md:w-100" cards={cards}/>
+          {ReviewsData.map((product) => (
+            <ReviewCard  key={product.id || index} className="md:w-100" product={product}/>
           ))}
         </div>
       </div>

@@ -3,57 +3,19 @@ import { FiSliders } from "react-icons/fi"
 import { IoIosArrowDown } from "react-icons/io"
 import ReviewCard from "../../../Components/ReviewCard"
 import Rating from "../../../Components/Rating"
+import { useProducts } from "../../../context/ProductContext"
+import { useParams } from "react-router-dom"
 
 const RatingReviews = () => {
-  const ReviewsData = [
-    {
-      id: 1,
-      rating: <Rating />,
-      title: "Hamid T.",
-      description:
-        "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    },
 
-    {
-      id: 2,
-      rating: <Rating />,
-      title: "Sarah M.",
-      description:
-        "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-    },
+  const { id } = useParams()
+  const { products, loading, error } = useProducts()
 
-    {
-      id: 3,
-      rating: <Rating />,
-      title: "Ali K.",
-      description:
-        "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
-    },
+  const singleProduct = products.find(
+    (p) => String(p.id) === String(id)
+  );
 
-    {
-      id: 4,
-      rating: <Rating />,
-      title: "Faiz L.",
-      description:
-        "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
-    },
-
-    {
-      id: 5,
-      rating: <Rating />,
-      title: "Mooen",
-      description:
-        "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
-    },
-
-    {
-      id: 6,
-      rating: <Rating />,
-      title: "Mooen",
-      description:
-        "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
-    },
-  ]
+  const productReviews = singleProduct.reviews
 
   return (
     <section className='relative py-5'>
@@ -61,7 +23,6 @@ const RatingReviews = () => {
         <div className='flex flex-col sm:flex-row sm:justify-between gap-4'>
           <div className='flex gap-2 items-center'>
             <h2 className='font-dm font-bold text-lg'>All Reviews</h2>
-            <span className='font-dm text-sm text-gray-500'>(451)</span>
           </div>
           <div className='flex gap-2 items-center flex-wrap'>
             <div className='bg-gray-100 p-3 rounded-full'>
@@ -79,11 +40,11 @@ const RatingReviews = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
-          {ReviewsData.map((cards, index) => (
+          {productReviews.map((product, index) => (
             <ReviewCard
-              key={cards.id || index}
+              key={product.id || index}
               className='w-full'
-              cards={cards}
+              product={product}
             />
           ))}
         </div>

@@ -1,19 +1,22 @@
 import React from "react"
 import { FaCheckCircle } from "react-icons/fa";
+import Rating from "./Rating";
 
-const ReviewCard = ({ cards, className = '' }) => {
+const ReviewCard = ({ product, className = '' }) => {
 
 
   return (
     <section>
         <div className={`w-[calc(100vw-48px)] shrink-0 border-2 border-gray-200 p-5 md:p-6 rounded-3xl flex flex-col gap-3 ${className}`}>
-          <span>{cards.rating}</span>
+          <span> 
+            <Rating rating={product.rating}/>
+          </span>
           <h3 className='font-dm text-xl font-bold flex items-center gap-2'>
-            {cards.title}
+            {product.title}
             <FaCheckCircle className='text-green-500' />
           </h3>
           <p className='font-dm text-base md:text-[15px] text-gray-500'>
-            "{cards.description}"
+            "{product.description}"
           </p>
         </div> 
     </section>
