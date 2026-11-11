@@ -7,15 +7,12 @@ import { useProducts } from "../../../context/ProductContext"
 import { useParams } from "react-router-dom"
 
 const RatingReviews = () => {
-
   const { id } = useParams()
   const { products, loading, error } = useProducts()
 
-  const singleProduct = products.find(
-    (p) => String(p.id) === String(id)
-  );
+  const singleProduct = products.find((p) => String(p.id) === String(id))
 
-  const productReviews = singleProduct.reviews
+  const reviews = singleProduct?.reviews
 
   return (
     <section className='relative py-5'>
@@ -40,13 +37,15 @@ const RatingReviews = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
-          {productReviews.map((product, index) => (
-            <ReviewCard
-              key={product.id || index}
-              className='w-full'
-              product={product}
-            />
-          ))}
+          {singleProduct?.reviews && singleProduct.reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <ReviewCard key={index} className='w-full' product={review} />
+            ))
+          ) : (
+            <p className='text-gray-500'>
+              No reviews available for this product.
+            </p>
+          )}
         </div>
         <div className='flex items-center justify-center pt-3'>
           <button className='font-dm text-sm border border-gray-300 py-3 px-6 sm:px-8 rounded-3xl'>
