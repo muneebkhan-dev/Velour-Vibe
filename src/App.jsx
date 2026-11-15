@@ -20,7 +20,7 @@ function App() {
           <Route path='/brands' element={<Brands />} />
           <Route path='/productdetails' element={<ProductDetails />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='/products/:id' element={<ProductDetails key={window.location.pathname}/>} />
         </Route>
       </Routes>
     </>

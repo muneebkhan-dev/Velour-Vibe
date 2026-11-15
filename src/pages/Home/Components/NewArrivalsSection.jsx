@@ -1,6 +1,10 @@
 import React from "react"
 import ProductCard from "../../../Components/ProductCard"
 import { useProducts } from "../../../context/ProductContext"
+import { Link } from "react-router-dom"
+import {
+  FiArrowRight,
+} from "react-icons/fi"
 
 const NewArrivalsSection = () => {
   const { products, loading, error } = useProducts()
@@ -32,11 +36,13 @@ const NewArrivalsSection = () => {
             </div>
           )}
         </div>
-        <div className='flex justify-center pt-5 md:pt-10'>
-          <button className='w-full md:w-auto font-dm text-sm lg:text-base py-3 md:px-15 lg:px-18 border border-[#000000]/10 rounded-3xl'>
-            View All
+        <Link to="/newarrivals" className='mt-12 flex justify-center'>
+          <button className='flex w-full max-w-xs items-center justify-center gap-2 rounded-full border border-black px-7 py-3 text-sm font-semibold transition hover:bg-black hover:text-white sm:w-auto'>
+            View More
+            <FiArrowRight />
           </button>
-        </div>
+          </Link>
+        
       </div>
     </section>
   )
