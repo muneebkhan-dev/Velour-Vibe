@@ -12,11 +12,11 @@ const ReviewCard = ({ product, className = '' }) => {
             <Rating rating={product.rating}/>
           </span>
           <h3 className='font-dm text-xl font-bold flex items-center gap-2'>
-            {product.title}
+            {product.reviewerName}
             <FaCheckCircle className='text-green-500' />
           </h3>
           <p className='font-dm text-base md:text-[15px] text-gray-500'>
-            "{product.description}"
+            "{product.comment}"
           </p>
         </div> 
     </section>

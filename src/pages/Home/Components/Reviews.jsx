@@ -11,40 +11,40 @@ const Reviews = () => {
     {
       id: 1,
       rating: 4.9,
-      title: "Hamid T.",
-      description:
+      reviewerName: "Hamid T.",
+      comment:
         "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
     },
 
     {
       id: 2,
       rating: 4.8,
-      title: "Sarah M.",
-      description:
+      reviewerName: "Sarah M.",
+      comment:
         "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
     },
 
     {
       id: 3,
       rating: 4.4,
-      title: "Ali K.",
-      description:
+      reviewerName: "Ali K.",
+      comment:
         "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
     },
 
     {
       id: 4,
       rating: 4.3,
-      title: "Faiz L.",
-      description:
+      reviewerName: "Faiz L.",
+      comment:
         "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
     },
 
     {
       id: 5,
       rating: 4.1,
-      title: "Mooen",
-      description:
+      reviewerName: "Mooen",
+      comment:
         "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
     },
   ]

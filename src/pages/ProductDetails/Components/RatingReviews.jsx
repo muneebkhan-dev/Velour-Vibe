@@ -47,11 +47,6 @@ const RatingReviews = () => {
             </p>
           )}
         </div>
-        <div className='flex items-center justify-center pt-3'>
-          <button className='font-dm text-sm border border-gray-300 py-3 px-6 sm:px-8 rounded-3xl'>
-            Load More Reviews
-          </button>
-        </div>
       </div>
     </section>
   )
