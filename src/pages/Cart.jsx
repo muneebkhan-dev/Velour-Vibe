@@ -1,106 +1,21 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { FiTrash2, FiMinus, FiPlus, FiArrowRight } from "react-icons/fi";
 import Breadcrumb from '../Components/Breadcrumb';
+import { CartContext } from '../context/CartContext';
 
 const Cart = () => {
 
-  const cartItems = [
-    {
-      id: 1,
-      img: "/src/assets/images/CardImages/proimg-1.png",
-      title: "T-shirt with Tape",
-      rating: 4.5,
-      price: "$120",
-      
-      category: "shirts",
-    },
+  
+    const { cart } = useContext(CartContext)
 
-    {
-      id: 2,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
+    useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // Naya page top se clean start ho
+    });
+  }, []);
 
-    {
-      id: 3,
-      img: "/src/assets/images/CardImages/proimg-3.png",
-      title: "Checkered Shirt",
-      rating: 4.5,
-      price: "$180",
-      
-      category: "shirts",
-    },
-    
-    {
-      id: 4,
-      img: "/src/assets/images/CardImages/proimg-4.png",
-      title: "Sleeve Striped T-shirt",
-      rating: 4.5,
-      price: "$130",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 5,
-      img: "/src/assets/images/CardImages/proimg-1.png",
-      title: "T-shirt with Tape",
-      rating: 4.5,
-      price: "$120",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 6,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 7,
-      img: "/src/assets/images/CardImages/proimg-3.png",
-      title: "Checkered Shirt",
-      rating: 4.5,
-      price: "$180",
-      
-      category: "shirts",
-    },
-    
-    {
-      id: 8,
-      img: "/src/assets/images/CardImages/proimg-4.png",
-      title: "Sleeve Striped T-shirt",
-      rating: 4.5,
-      price: "$130",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-
-    {
-      id: 9,
-      img: "/src/assets/images/CardImages/proimg-2.png",
-      title: "Skinny Fit Jeans",
-      rating: 4.5,
-      price: "$240",
-      originalPrice: "$260",
-      
-      category: "shirts",
-    },
-    
-  ]
 
   return (
     <>
@@ -113,14 +28,14 @@ const Cart = () => {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_380px] lg:items-start">
           <div className="border border-gray-200 p-3 sm:p-4 rounded-2xl">
             <div className="space-y-4">
-              {cartItems.map((item) => (
+              {cart.map((item) => (
                 <div
                   key={item.id}
                   className="relative flex min-h-[105px] gap-3 border-b border-gray-200 p-2.5 sm:gap-4 sm:p-3"
                 >
                   <div className="h-[82px] w-[72px] shrink-0 overflow-hidden bg-gray-100 sm:h-[92px] sm:w-[82px]">
                     <img
-                      src={item.img}
+                      src={item.thumbnail}
                       alt={item.title}
                       className="h-full w-full object-cover"
                     />
