@@ -6,14 +6,7 @@ import { useParams } from "react-router-dom"
 
 const Cart = () => {
   
-  const [products, setProducts] = useState([])
-  const { cart } = useContext(CartContext)
-
-  const allProducts = setProducts(cart)
-
-  // const handleDelete = (productId) => {
-  //   cart.filter((item) => item.id !== productId)
-  // }
+  const { cart, removeFromCart } = useContext(CartContext)
 
   useEffect(() => {
     window.scrollTo({
@@ -37,7 +30,7 @@ const Cart = () => {
             >
               {cart.length === 0 ? "Cart is empty!" : ""}
               <div className='space-y-4'>
-                {products.map((item) => (
+                {cart.map((item) => (
                   <div
                     key={item.id}
                     className='relative flex min-h-[105px] gap-3 border-b border-gray-200 p-2.5 sm:gap-4 sm:p-3'
@@ -71,7 +64,7 @@ const Cart = () => {
                     >
                       <FiTrash2
                         className='text-base sm:text-lg'
-                        onClick={() => handleDelete(item.id)}
+                        onClick={() => removeFromCart(item.id)}
                       />
                     </button>
                     <div className='absolute bottom-2 right-2 flex h-7 items-center rounded-full bg-gray-100 px-2 sm:h-8'>
