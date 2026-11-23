@@ -4,27 +4,52 @@ export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
-  const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id)
+ const addToCart = (product) => {
+  const qtyToAdd = product.quantity || 1;
 
-      if (existingProduct) {
-        return prevCart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item,
-        )
-      }
+  setCart((prevCart) => {
+    const existingProduct = prevCart.find((item) => item.id === product.id);
 
-      return [...prevCart, { ...product, quantity: 1 }]
-    })
-  }
+    if (existingProduct) {
+      return prevCart.map((item) => {
+        if (item.id !== product.id) return item;
+
+        const maxStock = item.stock ?? Infinity;
+        const nextQty = Math.min(item.quantity + qtyToAdd, maxStock);
+        return { ...item, quantity: nextQty };
+      });
+    }
+
+    return [...prevCart, { ...product, quantity: qtyToAdd }];
+  });
+};
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId))
   }
 
+  const handleIncrease = (productId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) => {
+        if (item.id !== productId) return item
+        const maxStock = item.stock ?? Infinity
+        if (item.quantity >= maxStock) return item
+        return { ...item, quantity: item.quantity + 1 }
+      }),
+    )
+  }
+
+  const handleDecrease = (productId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) => {
+        if (item.id !== productId) return item
+        if (item.quantity <= 1) return item
+        return { ...item, quantity: item.quantity - 1 }
+      }),
+    )
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, handleIncrease, handleDecrease }}>
       {children}
     </CartContext.Provider>
   )

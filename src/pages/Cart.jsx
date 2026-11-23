@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 
 const Cart = () => {
   
-  const { cart, removeFromCart } = useContext(CartContext)
+  const { cart, removeFromCart, handleIncrease, handleDecrease  } = useContext(CartContext)
 
   useEffect(() => {
     window.scrollTo({
@@ -71,6 +71,7 @@ const Cart = () => {
                       <button
                         type='button'
                         className='flex h-6 w-5 items-center justify-center text-gray-600 hover:text-black'
+                         onClick={() => handleDecrease(item.id)}
                       >
                         <FiMinus className='text-xs' />
                       </button>
@@ -80,6 +81,7 @@ const Cart = () => {
                       <button
                         type='button'
                         className='flex h-6 w-5 items-center justify-center text-gray-600 hover:text-black'
+                          onClick={() => handleIncrease(item.id)}
                       >
                         <FiPlus className='text-xs' />
                       </button>
