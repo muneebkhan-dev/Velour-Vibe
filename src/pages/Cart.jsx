@@ -16,6 +16,25 @@ const Cart = () => {
     })
   }, [])
 
+  const { subTotal, total } = cart.reduce(
+    (acc, item) => {
+      const price = Number(item.price) || 0;
+      const quantity = Number(item.quantity) || 1;
+      const discountPercent = Number(item.discountPercentage) || 0;
+      const itemOriginal = price * quantity;
+      const discountedUnitPrice = price * (1 - discountPercent / 100);
+      const itemTotal = discountedUnitPrice * quantity;
+
+      return {
+        subTotal: acc.subTotal + itemOriginal,
+        total: acc.total + itemTotal + 15,
+      };
+    },
+    { subTotal: 0, total: 0 }
+  );
+
+  const discount = Math.max(0, total - subTotal);
+
   return (
     <>
       <Breadcrumb />
@@ -94,12 +113,12 @@ const Cart = () => {
               <h2 className='mb-6 text-lg font-semibold'>Order Summary</h2>
               <div className='flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>Subtotal</span>
-                <span className='text-sm font-semibold'>$565</span>
+                <span className='text-sm font-semibold'>${subTotal.toFixed(2)}</span>
               </div>
               <div className='mt-4 flex items-center justify-between'>
-                <span className='text-sm text-gray-500'>Discount (-20%)</span>
+                <span className='text-sm text-gray-500'>Discount</span>
                 <span className='text-sm font-semibold text-red-500'>
-                  -$113
+                  -${discount.toFixed(2)}
                 </span>
               </div>
               <div className='mt-4 flex items-center justify-between'>
@@ -110,7 +129,7 @@ const Cart = () => {
               <div className='flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>Total</span>
 
-                <span className='text-xl font-bold'>$467</span>
+                <span className='text-xl font-bold'>${total.toFixed(2)}</span>
               </div>
               <div className='mt-5 flex gap-2'>
                 <div className='flex min-w-0 flex-1 items-center rounded-full bg-gray-100 px-4'>
