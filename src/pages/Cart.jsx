@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { FiTrash2, FiMinus, FiPlus, FiArrowRight } from "react-icons/fi"
 import Breadcrumb from "../Components/Breadcrumb"
 import { CartContext } from "../context/CartContext"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const Cart = () => {
   
@@ -34,6 +34,24 @@ const Cart = () => {
   );
 
   const discount = Math.max(0, total - subTotal);
+
+  if (cart.length === 0) {
+    return (
+      <section className="min-h-[65vh] flex items-center justify-center px-5 py-12">
+        <div className="max-w-md w-full text-center rounded-2xl  ">
+          <h2 className="text-2xl font-semibold text-[#0F0B33]">
+            Cart is empty
+          </h2>
+          <Link
+            to="/shop"
+            className="mt-3 inline-block px-6 py-3 rounded-xl bg-[#0F0B33] text-white text-sm font-medium hover:opacity-90 transition"
+          >
+            Continue Shopping
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <>
