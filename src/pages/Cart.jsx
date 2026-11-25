@@ -70,7 +70,7 @@ const Cart = () => {
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className='relative flex min-h-[105px] gap-3 border-b border-gray-200 p-2.5 sm:gap-4 sm:p-3'
+                    className='relative flex min-h-[105px] gap-3 border-b border-gray-200 last:border-b-0 p-2.5 sm:gap-4 sm:p-3'
                   >
                     <div className='h-[82px] w-[72px] shrink-0 overflow-hidden bg-gray-100 sm:h-[92px] sm:w-[82px]'>
                       <img
