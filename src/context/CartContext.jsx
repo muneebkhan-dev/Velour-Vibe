@@ -5,7 +5,7 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
  const addToCart = (product) => {
-  const qtyToAdd = product.quantity || 1;
+  const quantityToAdd = product.quantity || 1;
 
   setCart((prevCart) => {
     const existingProduct = prevCart.find((item) => item.id === product.id);
@@ -14,13 +14,13 @@ export const CartProvider = ({ children }) => {
       return prevCart.map((item) => {
         if (item.id !== product.id) return item;
 
-        const maxStock = item.stock ?? Infinity;
-        const nextQty = Math.min(item.quantity + qtyToAdd, maxStock);
-        return { ...item, quantity: nextQty };
+        const maxStock = item.stock ?? Infinity;g
+        const FinalQty = Math.min(item.quantity + quantityToAdd, maxStock);
+        return { ...item, quantity: FinalQty };
       });
     }
 
-    return [...prevCart, { ...product, quantity: qtyToAdd }];
+    return [...prevCart, { ...product, quantity: quantityToAdd }];
   });
 };
   const removeFromCart = (productId) => {
