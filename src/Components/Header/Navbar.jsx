@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { IoSearch } from "react-icons/io5"
 import { FiShoppingCart } from "react-icons/fi"
@@ -11,17 +11,20 @@ import { IoStorefront } from "react-icons/io5"
 import { IoChevronForwardOutline } from "react-icons/io5"
 import { FaHome } from "react-icons/fa"
 import { useLocation } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const { totalItems } = useContext(CartContext)
   const Location = useLocation()
 
   const isHome = location.pathname === "/"
 
   return (
     <nav className='relative'>
-      <div className={`nav-content max-w-7xl px-4 md:px-10 lg:px-10 py-6 mx-auto flex justify-between ${isHome ? "border-none" : "border-b border-gray-200 "} items-center border-b border-gray-200`}>
+      <div
+        className={`nav-content max-w-7xl px-4 md:px-10 lg:px-10 py-6 mx-auto flex justify-between ${isHome ? "border-none" : "border-b border-gray-200 "} items-center border-b border-gray-200`}
+      >
         <div className='flex gap-3 md:gap-5 lg:gap-5'>
           <button
             className='lg:hidden cursor-pointer z-40'
@@ -129,7 +132,19 @@ const Navbar = () => {
         </div>
         <div className='nav-icons flex gap-3 md:gap-4 lg:gap-4'>
           <IoSearch className='flex lg:hidden size-6' />
-          <FiShoppingCart className='size-6' />
+          <Link
+            to='/cart'
+            aria-label='Shopping cart'
+            className='relative inline-flex items-center justify-center p-1.5 text-[#0F0B33] hover:opacity-80 transition'
+          >
+            <FiShoppingCart className='size-6' />
+
+            {totalItems > 0 && (
+              <span className='absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-[#0F0B33] text-white text-[11px] font-semibold leading-none flex items-center justify-center'>
+                {totalItems}
+              </span>
+            )}
+          </Link>
           <CgProfile className='size-6' />
         </div>
       </div>

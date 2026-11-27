@@ -57,6 +57,10 @@ export const CartProvider = ({ children }) => {
     )
   }
 
+  const totalItems  = cart.reduce(
+    (sum, item) => sum + (Number(item.quantity) || 1),
+    0
+ )
   useEffect(() => {
     try {
       localStorage.setItem("cart", JSON.stringify(cart))
@@ -73,6 +77,7 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         handleIncrease,
         handleDecrease,
+        totalItems,
       }}
     >
       {children}
