@@ -1,28 +1,37 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([])
- const addToCart = (product) => {
-  const quantityToAdd = product.quantity || 1;
-
-  setCart((prevCart) => {
-    const existingProduct = prevCart.find((item) => item.id === product.id);
-
-    if (existingProduct) {
-      return prevCart.map((item) => {
-        if (item.id !== product.id) return item;
-
-        const maxStock = item.stock ?? Infinity;g
-        const FinalQty = Math.min(item.quantity + quantityToAdd, maxStock);
-        return { ...item, quantity: FinalQty };
-      });
+  const [cart, setCart] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem("cart")
+      return savedCart ? JSON.parse(savedCart) : []
+    } catch (error) {
+      console.error("Failed to load cart from localStorage:", error)
+      return []
     }
+  })
+  const addToCart = (product) => {
+    const quantityToAdd = product.quantity || 1
 
-    return [...prevCart, { ...product, quantity: quantityToAdd }];
-  });
-};
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id)
+
+      if (existingProduct) {
+        return prevCart.map((item) => {
+          if (item.id !== product.id) return item
+
+          const maxStock = item.stock ?? Infinity
+          g
+          const FinalQty = Math.min(item.quantity + quantityToAdd, maxStock)
+          return { ...item, quantity: FinalQty }
+        })
+      }
+
+      return [...prevCart, { ...product, quantity: quantityToAdd }]
+    })
+  }
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId))
   }
@@ -48,8 +57,24 @@ export const CartProvider = ({ children }) => {
     )
   }
 
+  useEffect(() => {
+    try {
+      localStorage.setItem("cart", JSON.stringify(cart))
+    } catch (error) {
+      console.error("Failed to save cart to localStorage:", error)
+    }
+  }, [cart])
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, handleIncrease, handleDecrease }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        handleIncrease,
+        handleDecrease,
+      }}
+    >
       {children}
     </CartContext.Provider>
   )

@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react"
 import { useState } from "react"
 import Rating from "../../../Components/Rating"
 import { FaMinus, FaPlus } from "react-icons/fa6"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { useProducts } from "../../../context/ProductContext"
 import { CartContext } from "../../../context/CartContext"
@@ -12,9 +12,9 @@ const ProductHero = () => {
   const { addToCart } = useContext(CartContext)
   const { products, loading, error } = useProducts()
   const [count, setCount] = useState(1)
-  const navigate = useNavigate();
-  const [isAdding, setIsAdding] = useState(false);
-  const timeoutRef = useRef(null);
+  const navigate = useNavigate()
+  const [isAdding, setIsAdding] = useState(false)
+  const timeoutRef = useRef(null)
 
   if (loading) {
     return (
@@ -41,9 +41,6 @@ const ProductHero = () => {
       </div>
     )
   }
-
-
- 
 
   const images = singleProduct.images?.length
     ? singleProduct.images
@@ -75,23 +72,22 @@ const ProductHero = () => {
     }
   }
 
-   const handleAddToCart = () => {
-    if (!singleProduct || isAdding) return;
+  const handleAddToCart = () => {
+    if (!singleProduct || isAdding) return
 
-    setIsAdding(true);
-    addToCart({ ...singleProduct, quantity: count });
+    setIsAdding(true)
+    addToCart({ ...singleProduct, quantity: count })
 
     window.scrollBy({
       top: 120,
       behavior: "smooth",
-    });
+    })
     timeoutRef.current = setTimeout(() => {
-      navigate("/cart");
-    }, 800);
-  };
+      navigate("/cart")
+    }, 800)
+  }
 
   const isOutOfStock = stock === 0
-  
 
   return (
     <section className='relative pb-10'>
@@ -233,7 +229,7 @@ const ProductHero = () => {
             <button
               type='button'
               disabled={isOutOfStock}
-              onClick={(handleAddToCart)}
+              onClick={handleAddToCart}
               className='w-full flex-1 font-dm text-base py-3 px-6 rounded-full bg-black text-white transition-colors hover:bg-gray-800 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed'
             >
               {isOutOfStock ? "Out of Stock" : ""}
